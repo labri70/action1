@@ -22,4 +22,7 @@ jobs:
       run: npm install
 
     - name: Run Token Transformer and Style Dictionary
-      run: npm run process-tokens
+      run: |
+        npm run process-tokens
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
