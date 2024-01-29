@@ -1,12 +1,4 @@
 module.exports = {
-  input: 'tokens/figma-tokens.json', // Update with the actual path to your Figma tokens JSON file
-  output: 'json/transformed-tokens.json', // Update with the desired output path
-  transformers: [
-    {
-      type: 'rename',
-      key: 'FigmaName',
-      newKey: 'NewName'
-    },
-    // Add more transformers as needed
-  ]
+  input: 'path/to/figma-tokens.json', // Figma에서 내보낸 토큰 JSON 파일의 경로
+  output: 'path/to/transformed-tokens.json', // 변환된 토큰을 저장할 파일의 경로
 };
