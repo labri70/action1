@@ -1,0 +1,48 @@
+{
+  "global": {
+    "Gray": {
+      "100": {
+        "value": "#f7f7f7",
+        "type": "color"
+      },
+      "200": {
+        "value": "#f0f0f0",
+        "type": "color"
+      },
+      "300": {
+        "value": "#e8e8e8",
+        "type": "color"
+      },
+      "400": {
+        "value": "#e1e1e1",
+        "type": "color"
+      },
+      "500": {
+        "value": "#d9d9d9",
+        "type": "color"
+      },
+      "600": {
+        "value": "#aeaeae",
+        "type": "color"
+      },
+      "700": {
+        "value": "#828282",
+        "type": "color"
+      },
+      "800": {
+        "value": "#575757",
+        "type": "color"
+      },
+      "900": {
+        "value": "#2b2b2b",
+        "type": "color"
+      }
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "global"
+    ]
+  }
+}
