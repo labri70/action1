@@ -17,7 +17,7 @@ jobs:
 
       - name: Run Token Transformer and Style Dictionary
         run: |
-          npx token-transformer tokens/figma-token theme/token.json global 
+          npx token-transformer tokens/figma-token.json theme/token.json global 
           npx style-dictionary build
 
         env:
