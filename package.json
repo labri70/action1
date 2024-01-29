@@ -2,7 +2,8 @@
   "name": "figma-token-processor",
   "version": "1.0.0",
   "scripts": {
-    "process-tokens": "token-transformer tokens/figma-tokens.json ./theme/global.json global && style-dictionary build"
+    "process-tokens": "token-transformer input.json output.json global,dark,components global && npm run build-style-dictionary",
+    "build-style-dictionary": "style-dictionary build -c style-dictionary.config.js"
   },
   "dependencies": {
     "style-dictionary": "^3.8.0",
