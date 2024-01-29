@@ -14,7 +14,7 @@ jobs:
       # 디자인 파일 변환 후 생성된 파일도 push해서 main 브랜치로 병합하는 PR을 생성
       - name: Run Token Transformer & style-dictionary
         run: |
-            npx token-transformer tokens/figma-tokens.json ./theme/global.json global && style-dictionary build
+            npx token-transformer tokens/figma-tokens.json ./theme/global.json global && npx style-dictionary build
             git config --global user.name "labri70" 
             git config --global user.email "labri70@naver.com"
             git add .
