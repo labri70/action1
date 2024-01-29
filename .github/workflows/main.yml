@@ -18,7 +18,7 @@ jobs:
       - name: Run Token Transformer and Style Dictionary
         run: |
           npx token-transformer tokens/figma-tokens.json theme/token.json global 
-          npx style-dictionary build -c config.js
+          npx style-dictionary build -c config.json
 
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
