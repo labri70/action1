@@ -1,0 +1,11 @@
+{
+  "name": "figma-token-processor",
+  "version": "1.0.0",
+  "scripts": {
+    "process-tokens": "node processTokens.js"
+  },
+  "dependencies": {
+    "style-dictionary": "^3.8.0",
+    "token-transformer": "^0.0.33"
+  }
+}
