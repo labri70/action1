@@ -2,7 +2,7 @@
   "name": "figma-token-processor",
   "version": "1.0.0",
   "scripts": {
-    "process-tokens": "token-transformer ./tokens/tokens.json ./json/figmaTokens.json && style-dictionary build"
+    "process-tokens": "token-transformer ./tokens/figma-tokens.json ./theme/tokens.json && style-dictionary build"
   },
   "dependencies": {
     "style-dictionary": "^3.8.0",
