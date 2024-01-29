@@ -1,5 +1,5 @@
 module.exports = {
-  source: ['./build/tokens.json'], // Use the same output path as in token-transformer.config.js
+  source: ['./theme/tokens.json'], // Use the same output path as in token-transformer.config.js
   platforms: {
     // Define your style dictionary platforms (e.g., 'css', 'scss', 'android', 'ios', etc.)
     css: {
