@@ -1,32 +1,28 @@
-name: Process Figma Tokens
-
 on:
   push:
     branches:
       - main
-
+      
 jobs:
-  process_tokens:
+  createPullRequest:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2  
-
-    - name: Setup Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run Token Transformer and Style Dictionary
-      run: |
-        npm run process-tokens
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      # 디자인 파일 변환 후 생성된 파일도 push해서 main 브랜치로 병합하는 PR을 생성
+      - name: Run Token Transformer & style-dictionary
+        run: |
+            npx token-transformer tokens/figma-tokens.json ./theme/global.json global && style-dictionary build
+            git config --global user.name "labri70" 
+            git config --global user.email "labri70@naver.com"
+            git add .
+            git commit -m '피그마 디자인 파일 변환'
+            git push
+        env: 
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Create Pull Request
+        run: gh pr create -B main -H design --title '💄 디자인 토큰 업데이트' --body '디자인 토큰이 업데이트 후 변환작업을 수행했습니다.'
+        env:
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
